@@ -12,6 +12,7 @@
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
+            overflow-x: hidden; /* Evita o scroll horizontal */
         }
 
         nav {
@@ -66,13 +67,10 @@
         }
 
         header {
-            padding: 10px;
+            padding: 15px;
             background-color: #173b57;
             color: #fff;
             position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
             text-align: center;
         }
 
@@ -85,8 +83,8 @@
         }
 
         header img {
-            width: 10%; /* Ajuste a largura da logo para uma visualização adequada */
-            max-width: 120px; /* Define um limite máximo de largura */
+            width: 10%;
+            max-width: 120px;
             margin-right: 10px;
         }
 
@@ -102,29 +100,30 @@
             }
 
             header img {
-                width: 30%; /* Ajusta a logo para telas menores */
-                max-width: 100px; /* Ajusta o tamanho máximo da logo */
+                width: 30%;
+                max-width: 100px;
                 margin: 0 0 10px 0;
             }
 
             nav ul {
-                flex-direction: column; /* Alinha os itens do menu verticalmente em telas menores */
-                align-items: stretch; /* Garante que o menu ocupe toda a largura disponível */
+                flex-direction: column;
+                align-items: stretch;
             }
 
             nav ul li {
-                width: 100%; /* Garante que cada item do menu ocupe toda a largura disponível */
+                width: 100%;
             }
         }
 
         main {
             padding: 20px;
+            box-sizing: border-box; /* Inclui padding na largura total do contêiner */
         }
 
         .content {
-            max-width: 100%; /* Garante que o contêiner não exceda a largura da tela */
+            max-width: 100%;
             margin: 0 auto;
-            padding: 0 10px; /* Adiciona um padding lateral para evitar que o conteúdo fique muito próximo das bordas */
+            padding: 0 10px;
         }
 
         .content h2 {
