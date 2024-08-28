@@ -13,6 +13,9 @@
             padding: 0;
             background-color: #f4f4f4;
             overflow-x: hidden; /* Evita o scroll horizontal */
+            min-height: 100vh; /* Garante que o body tenha a altura mínima da tela */
+            display: flex;
+            flex-direction: column;
         }
 
         nav {
@@ -118,6 +121,7 @@
         main {
             padding: 20px;
             box-sizing: border-box; /* Inclui padding na largura total do contêiner */
+            flex: 1; /* Faz com que o main ocupe o espaço restante disponível */
         }
 
         .content {
@@ -136,9 +140,8 @@
             padding: 10px;
             background-color: #ff9900;
             color: #fff;
-            position: fixed;
+            position: relative; /* Ajustado para evitar sobreposição do conteúdo */
             width: 100%;
-            bottom: 0;
         }
     </style>
 </head>
