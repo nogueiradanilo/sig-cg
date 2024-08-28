@@ -79,12 +79,15 @@
         header h1 {
             margin: 0;
             font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         header img {
             width: 10%; /* Ajuste a largura da logo para uma visualização adequada */
             max-width: 120px; /* Define um limite máximo de largura */
-            margin: 0;
+            margin-right: 10px;
         }
 
         @media (max-width: 768px) {
@@ -94,11 +97,14 @@
 
             header h1 {
                 font-size: 18px;
+                flex-direction: column;
+                align-items: center;
             }
 
             header img {
                 width: 30%; /* Ajusta a logo para telas menores */
                 max-width: 100px; /* Ajusta o tamanho máximo da logo */
+                margin: 0 0 10px 0;
             }
 
             nav ul {
@@ -116,8 +122,9 @@
         }
 
         .content {
-            max-width: 1200px;
+            max-width: 100%; /* Garante que o contêiner não exceda a largura da tela */
             margin: 0 auto;
+            padding: 0 10px; /* Adiciona um padding lateral para evitar que o conteúdo fique muito próximo das bordas */
         }
 
         .content h2 {
@@ -127,7 +134,7 @@
 
         footer {
             text-align: center;
-            padding: 2px;
+            padding: 10px;
             background-color: #ff9900;
             color: #fff;
             position: fixed;
@@ -171,7 +178,7 @@
     <main>
         <div class="content">
             <h2>Bem-vindo ao SiGS Campo Grande</h2>
-            <p>Visualize o estado atual das Unidades de Urgência de Campo Grande. Gestores têm acesso a ferramentas de administração e análise de dados em tempo real.</p>
+            <p>Este sistema permite a visualização do estado atual das Unidades de Urgência de Campo Grande. Gestores têm acesso a ferramentas de administração e análise de dados em tempo real.</p>
             <p>Use o menu acima para navegar pelas diferentes seções do sistema.</p>
         </div>
     </main>
