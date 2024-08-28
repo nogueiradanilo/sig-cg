@@ -20,6 +20,13 @@
             padding: 10px;
         }
 
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #000;
+        }
+
         nav ul {
             list-style: none;
             padding: 0;
@@ -33,7 +40,7 @@
         }
 
         nav ul li a {
-            color: #000000;
+            color: #000;
             text-decoration: none;
             font-weight: bold;
             padding: 10px 20px;
@@ -68,11 +75,19 @@
             text-align: center;
             background-color: #173b57;
             color: #fff;
+            position: relative;
         }
 
         header h1 {
             margin: 0;
             font-size: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header h1 img {
+            margin: 0 10px;
         }
 
         main {
@@ -100,8 +115,17 @@
         }
 
         @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
             nav ul {
                 flex-direction: column;
+                display: none;
+            }
+
+            nav ul.active {
+                display: flex;
             }
 
             nav ul li ul {
@@ -111,16 +135,26 @@
             nav ul li {
                 width: 100%;
             }
+
+            header h1 {
+                font-size: 18px;
+                flex-direction: column;
+            }
+
+            header h1 img {
+                width: 10%;
+            }
         }
     </style>
 </head>
 <body>
 
     <nav>
+        <span class="menu-toggle"><i class="fas fa-bars"></i></span>
         <ul>
             <li><a href="#">Início</a></li>
             <li>
-                <a href="#">Visualizações<i class="fas fa-caret-down"></i></a>
+                <a href="#">Visualizações <i class="fas fa-caret-down"></i></a>
                 <ul>
                     <li><a href="#">Painel Geral das Unidades</a></li>
                     <li><a href="#">Status por Unidade</a></li>
@@ -141,7 +175,9 @@
     </nav>
 
     <header>
-        <h1><img src="images/artborderorange.png" align="left" width="5%">SiGS - Sistema de Gestão de Saúde<img src="images/logo_prefcg.png" align="right" width="5%"></h1>
+        <h1>
+            <img src="images/artborderorange.png" align="left" width="5%">SiGS - Sistema de Gestão de Saúde<img src="images/logo_prefcg.png" align="right" width="5%">
+        </h1>
         <p>Acompanhe em tempo real a situação das Unidades de Urgência de Campo Grande</p>
     </header>
 
@@ -156,6 +192,15 @@
     <footer>
         <p>&copy; 2024 Coordenadoria de Urgência (Cur) - Sesau - Campo Grande. Todos os direitos reservados. Desenvolvido por Danilo A. Nogueira</p>
     </footer>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('nav ul');
+
+        menuToggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+    </script>
 
 </body>
 </html>
