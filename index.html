@@ -26,6 +26,7 @@
             margin: 0;
             display: flex;
             justify-content: space-between;
+            flex-wrap: wrap; /* Permite a quebra de linha nos itens do menu */
         }
 
         nav ul li {
@@ -66,42 +67,47 @@
 
         header {
             padding: 10px;
-            text-align: center;
             background-color: #173b57;
             color: #fff;
             position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
         }
 
         header h1 {
             margin: 0;
             font-size: 24px;
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
         }
 
-        header h1 img {
-            margin-right: 10px;
-        }
-
-        .logo {
-            width: 5%;
+        header img {
+            width: 10%; /* Ajuste a largura da logo para uma visualização adequada */
+            max-width: 120px; /* Define um limite máximo de largura */
+            margin: 0;
         }
 
         @media (max-width: 768px) {
+            header {
+                padding: 15px;
+            }
+
             header h1 {
                 font-size: 18px;
-                flex-direction: column;
-                align-items: center;
             }
 
-            header h1 img {
-                margin: 0 0 10px 0;
-                width: 30%;
+            header img {
+                width: 30%; /* Ajusta a logo para telas menores */
+                max-width: 100px; /* Ajusta o tamanho máximo da logo */
             }
 
-            .logo {
-                width: 20%;
+            nav ul {
+                flex-direction: column; /* Alinha os itens do menu verticalmente em telas menores */
+                align-items: stretch; /* Garante que o menu ocupe toda a largura disponível */
+            }
+
+            nav ul li {
+                width: 100%; /* Garante que cada item do menu ocupe toda a largura disponível */
             }
         }
 
@@ -121,7 +127,7 @@
 
         footer {
             text-align: center;
-            padding: 1px;
+            padding: 10px;
             background-color: #ff9900;
             color: #fff;
             position: fixed;
@@ -157,9 +163,9 @@
     </nav>
 
     <header>
-            <img src="images/artborderorange.png" alt="Logo SiGS" class="logo">
-        <h1>SiGS - Sistema de Gestão de Saúde.</h1><p>Acompanhe em tempo real a situação das Unidades de Urgência de Campo Grande.
-        </p>
+        <img src="images/artborderorange.png" alt="Logo SiGS">
+        <h1>SiGS - Sistema de Gestão de Saúde</h1>
+        <p>Acompanhe em tempo real a situação das Unidades de Urgência de Campo Grande.</p>
     </header>
 
     <main>
